@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <ul id="fruitList">
+      <!-- js출력 -->
+    </ul>
+    <ul id="nameList">
+      <!-- js출력 -->
+    </ul>
     <script>
-        
+      const fruitList = document.querySelector("#fruitList");
+      //   console.log(fruitList);
+
+      const fruits = [
+        "사과",
+        "바나나",
+        "포도",
+        "복숭아",
+        "자두",
+        "수박",
+        "딸기",
+      ];
+      //   fruits.forEach(function (item /*바꿔도 된다*/, index /*바꾸지 않는다*/) {
+      //     // console.log(item);
+      //     // console.log(index);
+      //     console.log(`${index + 1}번 과일은 : ${item}`);
+      //   });
+      fruits.forEach(function (fruit, index) {
+        // console.log(fruit);
+        // console.log(index + 1);
+        fruitList.innerHTML += `<li>${fruit}</li>`;
+      });
+
+      const name = [
+        "김서은",
+        "김민승",
+        "김명진",
+        "김노현",
+        "박정은",
+        "박진성",
+        "성다영",
+        "최윤지",
+        "정현영",
+        "하경미"
+      ];
+      name.forEach(function(name, index){
+        nameList.innerHTML += `<li>${name}</li>`
+      })
     </script>
-</body>
+  </body>
 </html>
