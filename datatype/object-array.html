@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let koreanScore = 80;
+      let englishScore = 70;
+      let mathScore = 90;
+      let science = 60;
+      let studentScore = [80, 70, 90, 60]; // 국어, 영어, 수학, 과학 점수
+      console.log(studentScore[1]); // 70, 1번 인덱스의 데이터에 접근
+      console.log(studentScore[2]); // 90
+      console.log(studentScore[3]); // 60
+      console.log(studentScore[0]); // 80
+
+      let array = [];
+      console.log(array);
+
+      let fruts = ["apple", "banana", "orange", "mango", "grapes"];
+      console.log(fruts[0]);
+      console.log(fruts.length);
+      document.write(fruts[0], fruts[1], fruts[2], fruts[3], fruts[4]);
+
+      //   객체를 사용한 변수
+      let person = {
+        name: "김서은",
+        age: 30,
+        isStudent: true,
+      };
+      console.log(person.name);
+
+      //   여러명의 객체를 접근하는 방법
+      let people = [
+        {
+          name: "하경미",
+          age: 20,
+          isStudent: false,
+        },
+        {
+          name: "김명진",
+          age: 25,
+          isStudent: true,
+        },
+        {
+          name: "김민승",
+          age: 23,
+          isStudent: true,
+        },
+        {
+          name: "김서은",
+          age: 20,
+          isStudent: true,
+        },
+        {
+          name: "박진성",
+          age: 30,
+          isStudent: true,
+        },
+        {
+          name: "박정은",
+          age: 26,
+          isStudent: true,
+        },
+      ];
+      console.log(people);
+      console.log(people[0].name);
+    </script>
+  </body>
+</html>

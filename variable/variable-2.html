@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 변수 연산
+      let x = 20;
+      let y = 30;
+      let total = x + y;
+      console.log(total);
+
+      let total1 = x * y;
+      console.log(total1);
+
+      let total2 = y - x;
+      let total3 = y / x;
+
+      document.write(`
+      <p> x와 y를 더한 금액은 <span> ${total} </span> , <br />
+      x와 y를 곱한 금액은 <span> ${total1} </span> </p>
+      <p> y에서 x를 뺀 금액은 <span> ${total2} </span>, <br />
+      y를 x로 나눈 값은 <span> ${total3} </span> </p>`);
+      //   변수로 이름을 저장
+      let name = "김서은";
+      document.write(` <h1> ${name} </h1>`)
+    </script>
+  </body>
+</html>

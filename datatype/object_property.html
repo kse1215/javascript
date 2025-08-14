@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let studentScore = {
+        koreanScore: 80,
+        englishScore: 70,
+        mathScore: 90,
+        scienceScore: 100,
+      };
+      console.log(studentScore.koreanScore);
+      console.log(studentScore["koreanScore"]);
+
+      let increment = 10;
+      console.log(increment); // 10
+      increment++;
+      console.log(increment); // 11
+
+      let num = 10;
+      let subnum = ++num;
+      console.log(subnum); // 11
+      let num1 = 10;
+      let subnum1 = num1++;
+      console.log(subnum1); // 10
+
+      let num2 = -10;
+      num2 = -num2;
+      console.log(num2); // 10
+      
+    </script>
+  </body>
+</html>
