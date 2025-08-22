@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        display: none;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">박스 1</button>
+    <button id="btn2">박스 2</button>
+    <button id="btn3">박스 3</button>
+
+    <div id="box1" class="content">박스 1 내용</div>
+    <div id="box2" class="content">박스 2 내용</div>
+    <div id="box3" class="content">박스 3 내용</div>
+
+    <script>
+      // 재사용할 열고/닫기 기능 함수
+      function show(showId) {
+        // console.log("확인");
+        // console.log(showId); // 결과값: #box1
+        let element = document.querySelector(showId);
+        console.log(element);
+        // element.style.display = "block";
+        if (
+          element.style.display === "none" ||
+          /* 아무것도 없을 때 */ element.style.display === ""
+        ) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+
+      // 각 버튼을 클릭했을때 함수
+      const btn1 = document.querySelector("#btn1");
+      btn1.addEventListener("click", function () {
+        show("#box1");
+      });
+      const btn2 = document.querySelector("#btn2");
+      btn2.addEventListener("click", function () {
+        show("#box2");
+      });
+      const btn3 = document.querySelector("#btn3");
+      btn3.addEventListener("click", function () {
+        show("#box3");
+      });
+    </script>
+  </body>
+</html>

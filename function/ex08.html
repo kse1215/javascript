@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .product{
+            border: 1px solid #ccc;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>상품 목록🛒</h1>
+    <div id="product-list">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const products = [
+        { name: "노트북", price: 1200000 },
+        { name: "스마트폰", price: 900000 },
+        { name: "이어폰", price: 200000 },
+      ];
+      function showProducts() {
+        products.forEach((item) => {
+          //   console.log(item);
+          const productList = document.querySelector("#product-list");
+          productList.innerHTML += `
+        <div class="product">
+         <h3>${item.name}</h3>
+         <p>${item.price.toLocaleString()}원</p>
+        </div>
+        `;
+        });
+      }
+      showProducts();
+    </script>
+  </body>
+</html>

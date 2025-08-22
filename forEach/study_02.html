@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="product">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const productList = document.querySelector(".product");
+
+      const products = [
+        { name: "노트북", price: 12000, color: "red" },
+        { name: "스마트폰", price: 22000, color: "blue" },
+        { name: "세탁기", price: 15000, color: "pink" },
+        { name: "tv", price: 12800, color: "green" },
+      ];
+      products.forEach(function (product, index) {
+        // console.log(product);
+        // console.log(product.name);
+        // console.log(product.price);
+        // console.log(product.color);
+        productList.innerHTML += `
+         <h3 style= "background-color: ${product.color}; color: aliceblue; border: 1px solid #333;">${product.name}</h3>
+         <p>가격: ${product.price}</p>
+         <p style= "color: ${product.color}">색상: ${product.color}</p><hr>
+        `;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["사과", "바나나", "딸기"];
+      const names = ["영희", "철수", "민수"]
+      const animal = ["고양이", "강아지", "펭귄"]
+      function printItem(item) {
+        console.log(`${item} 입니다.`);
+      }
+
+      fruits.forEach(printItem);
+      names.forEach(printItem);
+      animal.forEach(printItem)
+
+      /* fruits.forEach(function printItem(item) {
+        console.log(`${item} 입니다.`);
+      }); */
+    </script>
+  </body>
+</html>

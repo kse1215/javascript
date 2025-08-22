@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">안녕하세요🎈</h1>
+    <button id="btn">글자바꾸기 버튼</button>
+    <button id="hello">Hello</button>
+
+    <script>
+      const title = document.querySelector("#title");
+      const btn = document.querySelector("#btn");
+      const hello = document.querySelector("#hello");
+
+      // 재사용 불가
+      // btn.addEventListener("click", function(){
+      //     title.innerText = "반갑습니다(❁´◡`❁)"
+      // })
+
+      // 재사용 가능
+      function toggleText() {
+        title.innerText = "반갑습니다(❁´◡`❁)";
+      }
+      btn.addEventListener("click", function () {
+        toggleText();
+      });
+      hello.addEventListener("mouseenter", toggleText)
+    </script>
+  </body>
+</html>

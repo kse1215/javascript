@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 10;
+      console.log(num); // 10
+      let copyNum = num;
+      console.log(copyNum, num); // 10 10
+      num = 20;
+      console.log(num); // 20
+      console.log(copyNum); // 10 깊은 복사는 재할당 값 변경이 안된다
+    </script>
+  </body>
+</html>

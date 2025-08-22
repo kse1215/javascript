@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnHello">인사하기</button>
+    <button id="btnBye">작별인사</button>
+    <script>
+      function sayHello(/*매개 변수*/) {
+        console.log("안녕하세요");
+      }
+      function sayBye() {
+        console.log("안녕히가세요");
+      }
+      const btnHello = document.querySelector("#btnHello");
+      btnHello.addEventListener("click", function () {
+        sayHello();
+      });
+      const btnBye = document.querySelector("#btnBye");
+      btnBye.addEventListener("click", function () {
+        sayBye();
+      });
+    </script>
+  </body>
+</html>

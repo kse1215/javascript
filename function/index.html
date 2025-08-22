@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function open() {
+        console.log("함수실행");
+        // alert("오픈")
+      }
+      open();
+
+      const gugudan1 = function () {
+        console.log("익명함수 실행");
+      }; //익명 함수
+      gugudan1(); //익명 함수 호출
+
+      const gugudan2 = function gugudan() {
+        console.log("네이밍함수 실행");
+      }; //네이밍 함수
+      gugudan2(); //네이밍 함수 호출
+    </script>
+  </body>
+</html>

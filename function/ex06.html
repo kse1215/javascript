@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #menu {
+        display: none;
+      }
+      #menu.open {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 버튼클릭시 배경색 변경 -->
+    <button onclick="changeColor('red')">레드</button>
+    <button onclick="changeColor('blue')">블루</button>
+    <button onclick="changeColor('green')">그린</button>
+    <button onclick="changeColor('#cfd8ff')">색상 변경</button>
+
+    <!-- 토글 메뉴 -->
+    <button class="toggleMenu">메뉴 열기/닫기</button>
+    <button class="toggleBtn">열기/닫기</button>
+
+    <nav id="menu">
+      <ul>
+        <li>홈</li>
+        <li>서비스</li>
+        <li>연락처</li>
+      </ul>
+    </nav>
+
+    <script>
+      // 배경색 변경
+      function changeColor(bgcolor) {
+        // console.log(bgcolor);
+        document.body.style.backgroundColor = bgcolor;
+        toggleMenu1();
+      }
+
+      //   토글 메뉴
+      const toggleMenu = document.querySelector(".toggleMenu");
+      const menu = document.querySelector("#menu");
+      function toggleMenu1() {
+        menu.classList.toggle("open");
+      }
+      //   toggleMenu.addEventListener("click", toggleMenu1);
+      toggleMenu.addEventListener("click", function () {
+        toggleMenu1();
+      });
+
+      //   토글 메뉴 연습
+      const toggleBtn = document.querySelector(".toggleBtn");
+      const menu1 = document.querySelector("#menu");
+      function toggleBtn1() {
+        menu1.classList.toggle("open");
+      }
+      toggleBtn.addEventListener("click", toggleBtn1);
+    </script>
+  </body>
+</html>

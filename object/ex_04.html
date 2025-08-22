@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "하경미",
+      };
+      console.log(person); // 홍길동
+
+      const copyPerson = person; // 얕은 복사
+      console.log(copyPerson); // 홍길동
+
+      person.name = "홍길동";
+
+      console.log(person.name); // 홍길동
+      console.log(copyPerson.name); // 홍길동
+    </script>
+  </body>
+</html>

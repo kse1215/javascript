@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: {
+          firstName: "gildong",
+          lastName: "hong",
+        },
+        likes: ["사과", "바나나"],
+        printHello: function () {
+          return "hello";
+        },
+        age: 30,
+      };
+      console.log(person);
+
+      // 대괄호 연산자로 접근하는 법
+      console.log(person["name"]);
+      console.log(person["name"]["firstName"]);
+      // 마침표 연산자로 접근하는 법
+      console.log(person.name.firstName);
+
+      console.log(person["likes"][0]); // 대괄호 연산자로 접근하는 법
+      console.log(person.likes[0]); // 마침표 연산자로 접근하는 법
+
+      console.log(person["printHello"]()); // 대괄호 연산자로 접근하는 법
+      console.log(person.printHello()); // 마침표 연산자로 접근하는 법
+
+      console.log(person["age"]); // 대괄호 연산자로 접근하는 법
+      console.log(person.age); // 마침표 연산자로 접근하는 법
+
+      person.age = 40; // 객체 속성 값 변경하기
+      console.log(person.age);
+
+      // 객체 속성 동적으로 추가하기
+      const userName = {};
+      console.log(userName);
+      userName.name = "하경미";
+      console.log(userName);
+
+      // 객체 속성 동적으로 삭제하기
+      delete person.name;
+      console.log(person);
+    </script>
+  </body>
+</html>
