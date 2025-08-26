@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>상품 리스트</h1>
+    <!-- 상품을 출력 -->
+    <div id="product-list">
+      <!-- js출력 -->
+    </div>
+    <h2>filter() :10만원 이상 상품만 출력</h2>
+    <div id="expensive-list">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const products = [
+        { id: 1, name: "노트북", price: 1200000 },
+        { id: 2, name: "마우스", price: 25000 },
+        { id: 3, name: "키보드", price: 55000 },
+        { id: 4, name: "모니터", price: 350000 },
+      ];
+      //   html 생성 함수 (재사용)
+      function createProductHtml(list) {
+        // console.log(list);
+        return list
+          .map(
+            (p) =>
+            ` 
+            <div class="product">
+              <h2>${p.name}</h2>
+              <p>가격 : ${p.price.toLocaleString()} 원</p>
+            </div>
+            `
+          )
+          .join("");
+      }
+      // 1.전체 상품 출력
+      const productList = document.querySelector("#product-list");
+      productList.innerHTML = createProductHtml(products);
+      // 2. filter() 10만원 이상만 출력
+      const expensiveProducts = products.filter(p => p.price >= 100000)
+      const expensiveList = document.querySelector("#expensive-list")
+      expensiveList.innerHTML = createProductHtml(expensiveProducts)
+    </script>
+  </body>
+</html>
