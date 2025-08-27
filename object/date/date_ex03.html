@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>날짜 선택하기</h1>
+    <div class="container">
+      <h2>날짜 선택 및 기록</h2>
+      <form class="date-form">
+        <label for="date">날짜 선택 : </label>
+        <input type="date" id="date" required />
+        <button type="submit">기록하기</button>
+      </form>
+      <div class="display">
+        <!-- js 출력 -->
+
+      </div>
+    </div>
+
+    <script>
+      const form = document.querySelector(".date-form");
+      const display = document.querySelector(".display");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // log가 안 찍히고 번쩍거리면 적는다.
+        // console.log("제출");
+        const slectedDate = new Date(document.querySelector("#date").value) 
+        // console.log(slectedDate);
+        const formDate = slectedDate.toLocaleDateString()
+        console.log(formDate);
+        // const formTime = slectedDate.toLocaleTimeString()
+        // console.log(formDate);
+        const now = new Date().toLocaleString()
+        console.log(now);
+        display.innerHTML += `
+         <p>
+          <strong>선택된 날짜: ${formDate}</strong><br>
+          (기록된 시간: ${now})
+         </p> <hr>
+        `
+      });
+    </script>
+  </body>
+</html>

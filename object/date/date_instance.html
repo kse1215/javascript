@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const date = new Date();
+      console.log(date);
+      const date1 = new Date(2025, 1, 25);
+      console.log(date1);
+      const date2 = new Date(/* 년도, 월, 일 */ 2025, 8, 27, /* 시, 분, 초 */ 18, 30, 50);
+      console.log(date2);
+
+      const dateFormat = `${date2.getFullYear()} - ${date2.getMonth()} - ${date2.getDate()}
+      시간: ${date2.getHours()} : ${date2.getMinutes()}
+      `
+      console.log(dateFormat);
+      
+    </script>
+  </body>
+</html>
