@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red-color {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">text</p>
+    <script>
+      const pEl = document.querySelector("#text");
+      //   pEl.addEventListener("click", function () {
+      //     // console.log(this);
+      //     this.classList.toggle("red-color")
+      //   });
+      //   pEl.addEventListener("click", (e) => {
+      //     // console.log(this);
+      // //    console.log( e.target);
+      // e.target.classList.toggle("red-color")
+
+      //   });
+      //   1초 마다 toggle 메서드 반복 실행
+      setInterval(function () {
+        pEl.classList.toggle("red-color");
+      }, 1000);
+    </script>
+  </body>
+</html>

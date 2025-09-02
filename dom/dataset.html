@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dataset 속성</title>
+  </head>
+  <body>
+    <button data-cnt="10">가방 구매</button>
+    <!-- cnt 부분은 내가 지어주는 이름 -->
+    <button data-cnt="0">신발 구매</button>
+    <p id="output">버튼을 클릭해 보세요</p>
+    <script>
+      const buttonEls = document.querySelectorAll("button");
+      const output = document.getElementById("output")
+      // console.log(buttonEls);
+      buttonEls.forEach((btn) => { // btn은 매개변수로 내가 지어주는 이름
+        // console.log(btn);
+        // console.log(btn.dataset.cnt);
+        // btn.dataset.cnt = 50
+        // console.log(btn.dataset.cnt);
+        btn.addEventListener("click",()=>{
+            const count = btn.dataset.cnt
+            // 화면에 출력
+            output.textContent=`클릭한 버튼의 data-cnt값 : ${count}`
+        })
+      });
+    </script>
+  </body>
+</html>

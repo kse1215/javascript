@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text">text</p>
+    <script>
+      const pEl = document.querySelector("#text");
+      // pEl.style.color = "#ff0000"
+      // pEl.style.fontSize = "30px"
+      // pEl.style.backgroundColor = "yellow"
+      Object.assign(pEl.style, {
+        color: "#ff0000",
+        fontSize: "30px",
+        backgroundColor: "antiquewhite"
+      });
+    </script>
+  </body>
+</html>
