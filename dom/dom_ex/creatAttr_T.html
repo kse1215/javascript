@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item4 {
+        color: red;
+        background-color: aqua;
+      }
+      #cat {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <!-- 이미지 태그 생성 -->
+      <!-- <img src="/images/cat01.png" alt="고양이"> -->
+    </ul>
+    <button id="addItemBtn">아이템 추가</button>
+    <script>
+      const addBtn = document.querySelector("#addItemBtn");
+      const list = document.querySelector("#list");
+      addBtn.addEventListener("click", () => {
+        // li태그 생성
+        const newItem = document.createElement("li");
+        // console.log(newItem);
+        newItem.textContent = "item4";
+        list.appendChild(newItem);
+        // console.log(list);
+        newItem.setAttribute("class", "item4");
+        // 이미지 태그 만들기
+        const newImg = document.createElement("img");
+        newImg.setAttribute("src", "/images/cat01.png");
+        newImg.setAttribute("alt", "고양이");
+        newImg.setAttribute("id", "cat");
+
+        console.log(newImg);
+        list.appendChild(newImg);
+      });
+    </script>
+  </body>
+</html>
