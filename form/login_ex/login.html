@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form_box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #4f46e5;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #4338ca;
+      }
+      #message {
+        margin-top: 10px;
+        /* text-align: center; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form_box">
+      <h2>로그인</h2>
+      <form id="loginForm">
+        <label>
+          이메일
+          <input type="email" id="loginEmail" placeholder="이메일 입력" />
+        </label>
+
+        <label>
+          비밀번호
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="비밀번호 입력"
+          />
+        </label>
+
+        <button type="submit">로그인</button>
+      </form>
+      <div id="message"></div>
+      <!-- ✅ 회원가입 링크 추가 -->
+      <div class="signup_link">
+        아직 회원이 아니신가요? <a href="signup.html">회원가입하기</a>
+      </div>
+    </div>
+
+    <script>
+      const form = document.querySelector("#loginForm");
+      const message = document.querySelector("#message");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // 로그인 페이지에서 입력한 값
+        const email = document.querySelector("#loginEmail").value.trim();
+        const password = document.querySelector("#loginPassword").value.trim();
+
+        // 로컬스토리지에서 값 가져오기
+        const savedEmail = localStorage.getItem("userEmail");
+        const savedPassword = localStorage.getItem("userPassword");
+        const savedName = localStorage.getItem("userName");
+
+        if (email === savedEmail && password === savedPassword) {
+          message.innerHTML = ` ${savedName}님 환영합니다🎉 `;
+          message.style.color = "#15803d";
+          // window.location.href = "main.html"
+          //   2초 뒤에 메인 페이지로 이동
+          setTimeout(() => {
+            window.location.href = "main.html";
+          }, 2000);
+          form.reset()
+        } else {
+          message.innerHTML = ` 이메일 또는 비밀번호가 올바르지 않습니다. `;
+          message.style.color = "tomato";
+          message.style.fontSize = "12px";
+        }
+      });
+    </script>
+  </body>
+</html>

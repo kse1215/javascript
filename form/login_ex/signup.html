@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form_box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #4f46e5;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #4338ca;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form_box">
+      <h2>회원가입</h2>
+      <form id="signupForm">
+        <label>
+          이름
+          <input type="text" id="username" placeholder="이름을 입력하세요" />
+        </label>
+
+        <label>
+          이메일
+          <input type="text" id="email" placeholder="이메일을 입력하세요" />
+        </label>
+
+        <label>
+          비밀번호
+          <input type="password" id="password" placeholder="비밀번호 입력" />
+        </label>
+
+        <label>
+          비밀번호 확인
+          <input
+            type="password"
+            id="passwordConfirm"
+            placeholder="비밀번호 확인"
+          />
+        </label>
+
+        <button type="submit">가입하기</button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.querySelector("#signupForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.querySelector("#username").value.trim();
+        const email = document.querySelector("#email").value.trim();
+        const password = document.querySelector("#password").value.trim();
+        const passwordConfirm = document
+          .querySelector("#passwordConfirm")
+          .value.trim();
+
+        // 필수 입력값 체크 (유효성 검사)
+        if (!name || !email || !password || !passwordConfirm) {
+          alert("모든 항목을 입력해 주세요.");
+          return;
+        }
+        // 이메일 형식 체크 (유효성 검사)
+        if (!email.includes("@")) {
+          alert("올바른 이메일 형식이 아닙니다.");
+          return;
+        }
+        // 비밀번호 일치 확인 (유효성 검사)
+        if (password !== passwordConfirm) {
+          alert("비밀번호가 일치하지 않습니다.");
+          return;
+        }
+
+        // 로컬스토리지(localStorage)에 저장
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+
+        // 가입하기 클릭시 성공 멘트 출력
+        alert("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다☺");
+        window.location.href = "login.html"; // 로그인 페이지로 이동
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

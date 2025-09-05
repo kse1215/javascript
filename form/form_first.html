@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm" name="myForm">
+      <!-- <label for="username">이름</label> -->
+      <label>
+        이름 :
+        <input type="text" id="username" name="username" />
+      </label>
+      <label>
+        이메일 :
+        <input type="text" id="email" name="email" />
+      </label>
+      <button type="submit">제출</button>
+    </form>
+    <div id="result">
+      <!-- js출력 -->
+    </div>
+    <div id="localStorage_result">
+      <!-- js출력 -->
+    </div>
+
+    <script>
+      const form = document.querySelector("#myForm");
+      const result = document.querySelector("#result");
+      const localResult = document.querySelector("#localStorage_result");
+
+      //   페이지가 로드될때(제출을 누르지 않아도) 로컬스토리지에 저장된 값이 있으면 화면에 출력
+      //   함수 안에 적은 변수는 그 밖에서는 인식을 못한다. (반대의 경우는 인식함)
+      const savedName = localStorage.getItem("username");
+      const savedEmail = localStorage.getItem("useremail");
+
+      if (savedName && savedEmail) {
+        localResult.innerHTML = `
+         <p>이름: ${savedName}</p>
+         <p>이메일: ${savedEmail}</p>
+        `;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // console.log("제출");
+
+        // form 접근하기
+        // const userName = document.querySelector("#username").value.trim()
+        // const userEmail = document.querySelector("#email").value.trim()
+        // name으로 접근
+        const userName = myForm.username.value.trim();
+        const userEmail = myForm.email.value.trim();
+        console.log(userName, userEmail);
+
+        // 입력값이 비었는지 확인 (유효성 검사)
+        if (userName === "" || userEmail === "") {
+          return alert("모든 항목을 작성해 주세요.");
+        }
+
+        // 이메일 형식 검사 (유효성 검사)
+        if (!userEmail.includes("@")) {
+          return alert("올바른 이메일을 입력해 주세요.");
+        }
+
+        //   이름이랑 메일 주소를 화면에 출력하기
+        result.innerHTML = `
+         <p>이름: ${userName}</p>
+         <p>이메일: ${userEmail}</p>
+        `;
+
+        // localStorage 저장
+        // 키(여기서는 username/useremail)는 내가 지정
+        localStorage.setItem("username", userName);
+        localStorage.setItem("useremail", userEmail);
+
+        // localStorage 저장된 값 꺼내오기
+        const savedName = localStorage.getItem("username");
+        console.log("저장된 이름:", savedName);
+        const savedEmail = localStorage.getItem("useremail");
+        console.log("저장된 이름:", savedEmail);
+
+        // input 초기화
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

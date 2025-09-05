@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/order.css" />
+    <script src="js/order.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <form name="order">
+        <fieldset>
+          <!-- fieldset: 네모. 꼭 안 해도 괜찮다. -->
+          <legend>주문 정보</legend>
+          <ul>
+            <li>
+              <label for="billingName" class="field">이름 :</label>
+              <input
+                type="text"
+                class="input_box"
+                id="billingName"
+                name="billingName"
+              />
+            </li>
+            <li>
+              <label for="billingTel" class="field">연락처 :</label>
+              <input
+                type="tel"
+                class="input_box"
+                id="billingTel"
+                name="billingTel"
+              />
+            </li>
+            <li>
+              <label for="billingAddr" class="field">주소 :</label>
+              <input
+                type="text"
+                class="input_box"
+                id="billingAddr"
+                name="billingAddr"
+              />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+      <form name="ship">
+        <fieldset>
+          <legend>배송 정보</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="shippingInfo" id="shippingInfo" />
+              <label for="shippingInfo" class="chek">
+                주문 정보과 배송 정보가 같습니다.
+              </label>
+            </li>
+            <li>
+              <label for="shippingName" class="field">이름 :</label>
+              <input
+                type="text"
+                class="input_box"
+                id="shippingName"
+                name="shippingName"
+              />
+            </li>
+            <li>
+              <label for="shippingTel" class="field">연락처 :</label>
+              <input
+                type="tel"
+                class="input_box"
+                id="shippingTel"
+                name="shippingTel"
+              />
+            </li>
+            <li>
+              <label for="shippingAddr" class="field">주소 :</label>
+              <input
+                type="text"
+                class="input_box"
+                id="shippingAddr"
+                name="shippingAddr"
+              />
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit" class="order">결제하기</button>
+      </form>
+    </div>
+  </body>
+</html>
