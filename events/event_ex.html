@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+      }
+      .boxResize {
+        width: 200px;
+        height: 200px;
+        background-color: crimson;
+      }
+      .active {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 이벤트 연결 -->
+    <button id="btn">click</button>
+    <!-- 2. 입력 이벤트 -->
+    <input type="text" id="username" placeholder="이름을 입력하세요" />
+    <!-- 3. form 제출 이벤트 -->
+    <form id="myForm">
+      <input type="text" placeholder="이메일을 입력하세요" />
+      <button type="submit">제출</button>
+    </form>
+    <!-- 4. 마우스 이벤트 -->
+    <div id="box"></div>
+    <!-- 5. 키보드 이벤트 -->
+    <input type="text" id="keyInput" placeholder="아무 키나 눌러보세요" />
+    <!-- 7. resize 이벤트 -->
+    <div class="boxResize"></div>
+    <p>브라우저 창의 크기를 조절해주세요</p>
+
+    <script>
+      // 1. 이벤트 연결
+      const btnEl = document.querySelector("#btn");
+      btnEl.addEventListener("click", function () {
+        console.log("click");
+        alert("짜잔");
+      });
+
+      // 2. 입력 이벤트
+      const input = document.querySelector("#username");
+      input.addEventListener("input", function () {
+        console.log("입력한 값", input.value);
+      });
+
+      //   3. form 제출 이벤트
+      const form = document.querySelector("#myForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("폼이 제출되었습니다.");
+      });
+
+      // 4. 마우스 이벤트
+      const box = document.querySelector("#box");
+      //   mouseover: 마우스 올렸을 때
+      box.addEventListener("mouseover", function () {
+        box.style.backgroundColor = "cornflowerblue";
+      });
+      box.addEventListener("mouseout", function () {
+        box.style.backgroundColor = "royalblue";
+      });
+
+      //   5. 키보드 이벤트
+      const keyInput = document.querySelector("#keyInput");
+      keyInput.addEventListener("keydown", function (e) {
+        console.log("누른 키:", e.key);
+      });
+
+      // 6. 페이지 로드 이벤트
+      window.addEventListener("load", function () {
+        console.log("페이지 로딩 완료");
+      });
+
+      //  7. resize 이벤트
+      const boxResize = document.querySelector(".boxResize");
+      window.addEventListener("resize", function () {
+        if (window.innerWidth < 600) {
+          boxResize.classList.add("active");
+        } else {
+          boxResize.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

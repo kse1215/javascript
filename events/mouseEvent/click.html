@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click 이벤트</title>
+  </head>
+  <body>
+    <button class="clickBtn">클릭하세요</button>
+    <p class="displayText">
+      <!-- js 출력 -->
+    </p>
+<input type="text" placeholder="입력하세요">
+
+    <script>
+      // 변수에 저장
+      const clickBtn = document.querySelector(".clickBtn");
+      const displayTxt = document.querySelector(".displayText");
+
+      clickBtn.addEventListener("dblclick", function (event) {
+        console.log(event);
+        console.log(event.type);
+        console.log(event.pageX);
+        console.log(event.pageY);
+        console.log(event.target);
+
+        displayTxt.innerHTML = `안녕하세요`
+        event.target.innerText = `click` // 버튼의 글자 변경
+      });
+
+    //   input
+    const inputEl = document.querySelector("input")
+    inputEl.addEventListener("keydown", function(e){
+        console.log(e);
+        console.log(e.key);
+        console.log(e.keyCode);
+        console.log(e.type);
+    })
+    </script>
+  </body>
+</html>

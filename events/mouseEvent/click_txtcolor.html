@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnColor">글자색 변경</button>
+    <p class="txtP">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore quod
+      aperiam animi deleniti voluptate in nostrum eos ipsa, illo commodi
+      praesentium odit aliquam. Ipsam vitae fugiat earum soluta harum dolores!
+    </p>
+
+    <script>
+      // 1. 변수에 저장
+      const btnColor = document.querySelector("#btnColor");
+      const txtP = document.querySelector(".txtP");
+
+      // 랜덤으로 글자색 변경하기
+      btnColor.addEventListener("click", function () {
+        const colors = [
+          "AliceBlue",
+          "CadetBlue",
+          "CornflowerBlue",
+          "IndianRed",
+          "LightBlue",
+          "LightSteelBlue",
+          "Linen",
+          "MediumPurple",
+          "MediumSlateBlue",
+          "MistyRose",
+          "OliveDrab",
+          "Tomato",
+          "Tan",
+          "LightSlateGray",
+        ];
+        // console.log(colors[0]);
+        // console.log(colors[1]);
+
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        console.log(randomIndex);
+        const randomColor = colors[randomIndex];
+        txtP.style.color = randomColor;
+      });
+    </script>
+  </body>
+</html>

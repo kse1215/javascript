@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyup 이벤트</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+      }
+      .box1.active {
+        background-color: rgb(126, 225, 255);
+      }
+      .box2.active {
+        background-color: rgb(255, 253, 218);
+      }
+      .box3.active {
+        background-color: rgb(195, 136, 223);
+      }
+      .box4.active {
+        background-color: rgb(255, 212, 218);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>keyup 이벤트</h1>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+    <script>
+      // key와 box 클래스 저장
+      const keyMap = {
+        enter: ".box1",
+        shift: ".box2",
+        i: ".box3",
+        h: ".box4",
+      };
+      // console.log(keyMap.enter);
+      // console.log(keyMap["enter"]);
+
+      document.addEventListener("keyup", function (e) {
+        // console.log("keyup");
+        // console.log(e);
+        // console.log(e.key);
+        const key = e.key.toLowerCase();
+        // console.log(key);
+        const selector = keyMap[key]; // 키에 맞는 선택자 가져오기
+        // console.log(keyMap["enter"]);
+        // console.log(keyMap[key]);
+
+        console.log(selector);
+        if (selector) {
+          // const box1 = document.querySelector(".box1")
+          // const box2 = document.querySelector(".box2")
+          // const box3 = document.querySelector(".box3")
+          // const box4 = document.querySelector(".box4")
+          const box = document.querySelector(selector);
+          console.log(box);
+          box.classList.add("active")
+        }
+      });
+    </script>
+  </body>
+</html>

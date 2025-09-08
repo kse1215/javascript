@@ -101,7 +101,7 @@
         // 필수 입력값 체크 (유효성 검사)
         if (!name || !email || !password || !passwordConfirm) {
           alert("모든 항목을 입력해 주세요.");
-          return;
+          return; // return: 여기서 멈추고 더이상 아래코드를 실행하지 마라
         }
         // 이메일 형식 체크 (유효성 검사)
         if (!email.includes("@")) {

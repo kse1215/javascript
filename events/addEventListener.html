@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>click</button>
+    <button class="btn1">click</button>
+
+    <script>
+      const btnEl = document.querySelector("button");
+
+      // btnEl.addEventListener("click", function(){
+      //     console.log("click");
+      // })
+      //   btnEl.addEventListener("click", () => {
+      //     console.log("click");
+      //   });
+
+      const clickEvent = () => {
+        console.log("click");
+      };
+      btnEl.addEventListener("click", clickEvent)
+
+      const btn1 = document.querySelector(".btn1")
+      btn1.addEventListener("click", clickEvent)
+    </script>
+  </body>
+</html>
