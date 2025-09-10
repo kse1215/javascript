@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event object</title>
+  </head>
+  <body>
+    <button>click</button>
+    <input type="text">
+
+    <script>
+      const btnEl = document.querySelector("button");
+      btnEl.addEventListener("click", function (e) {
+        console.log(e);
+        e.preventDefault();
+
+        console.log(`clientX:${event.clientX}`);
+        console.log(`clientY :${event.clientY}`);
+        console.log(`pageX:${event.pageX}`);
+        console.log(`pageY:${event.pageY}`);
+        console.log(`screenX:${event.screenX}`);
+        console.log(`screenY :${event.screenY}`);
+      });
+
+      const inputEl = document.querySelector("input")
+      inputEl.addEventListener("keydown", function(e){
+        console.log(e);
+        console.log(e.key);
+        console.log(e.keyCode);
+        console.log(e.ctrlKey);
+        console.log(e.altKey);
+        console.log(e.shiftKey);
+        
+      })
+    </script>
+  </body>
+</html>

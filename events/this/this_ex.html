@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tihs 예제</title>
+    <style>
+        .tomato{
+            background-color: tomato;
+            border: 2px solid transparent;
+            border-radius: 3px;
+        }
+    </style>
+  </head>
+  <body>
+    <button class="btn">버튼 1</button>
+    <button class="btn">버튼 2</button>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach(function (btn) {
+        // console.log(btn);
+        // btn.addEventListener("click", function () {
+        //   if (this.style.backgroundColor === "tomato") {
+        //     this.style.backgroundColor = "";
+        //   } else {
+        //     this.style.backgroundColor = "tomato";
+        //   }
+        // });
+        btn.addEventListener("click", function(){
+            this.classList.toggle("tomato")
+        })
+      });
+    </script>
+  </body>
+</html>

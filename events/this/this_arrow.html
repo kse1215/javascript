@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+  </head>
+  <body>
+    <p>text-1</p>
+    <p>text-2</p>
+    <p>text-3</p>
+
+    <script>
+      const pEls = document.querySelectorAll("p");
+      console.log(pEls);
+      pEls.forEach(function (el) {
+        el.addEventListener("click", (e) => {
+          // 이벤트 함수를 화살표 함수로 작성하면 this 범위가 달라져서 this가 이벤트 발생 노드를 가리키지 않는다. 
+          // console.log(this);
+          // console.log(e);
+          // console.log(e.target);
+          if(e.target.style.color === "tomato"){
+                e.target.style.color = "black"
+            }else{
+                e.target.style.color = "tomato"
+            }
+        });
+      });
+    </script>
+  </body>
+</html>

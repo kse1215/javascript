@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 이벤트</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="이름을 입력하세요">
+    <div id="preview">
+        <!-- 실시간js 출력 -->
+    </div>
+    <!-- 실시간 글자 수 -->
+     <p id="counter">0 글자</p>
+
+    <script>
+        const username = document.querySelector("#username")
+        const preview = document.querySelector("#preview")
+        const counter = document.querySelector("#counter")
+
+        username.addEventListener("input", function(){
+            preview.textContent = `실시간 입력 : ${username.value}`
+            counter.textContent = `${username.value.length} 글자`
+        })
+    </script>
+</body>
+</html>

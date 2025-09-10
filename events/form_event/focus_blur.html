@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>focus/blur 이벤트</title>
+  </head>
+  <body>
+    <input type="text" id="username" placeholder="이름 입력" />
+    <p id="message">
+      <!-- js 출력 -->
+    </p>
+
+    <script>
+      // focus: 입력창을 클릭했을때
+      // blur: 입력창을 나왔을때
+      const username = document.querySelector("#username");
+      const message = document.querySelector("#message");
+
+      username.addEventListener("focus", function () {
+        message.textContent = "이름을 입력해 주세요😳";
+        message.style.color = "CornflowerBlue";
+        username.style.backgroundColor = "OliveDrab";
+      });
+      username.addEventListener("blur", function () {
+        if (username.value.trim() === "") {
+          message.textContent = "이름은 필수입니다.";
+          message.style.color = "Tomato";
+          username.style.backgroundColor = "tomato";
+        } else {
+          message.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>

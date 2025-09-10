@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checked 이벤트</title>
+  </head>
+  <body>
+    <!-- 체크박스 버튼 선택 -->
+    <label> <input type="checkbox" id="agree" />이용약관 동의 </label>
+    <p id="agreeMsg">
+      <!-- js 출력 -->
+    </p>
+
+    <!-- 라디오 버튼 선택 -->
+    <!-- 라디오 버튼은 한 개만 선택 가능. name은 꼭 동일해야 한 개만 선택된다. -->
+    <label> <input type="radio" name="gender" value="남자" />남자</label>
+    <label> <input type="radio" name="gender" value="여자" />여자</label>
+    <label> <input type="radio" name="gender" value="그 외" />그 외</label>
+    <p id="radioResult">
+      <!-- js 출력 -->
+    </p>
+
+    <script>
+      // 체크박스
+      const agree = document.querySelector("#agree");
+      const agreeMsg = document.querySelector("#agreeMsg");
+
+      agree.addEventListener("change", function () {
+        if (agree.checked) {
+          agreeMsg.textContent = "동의해 주셔서 감사합니다🥰";
+          agreeMsg.style.color = "OliveDrab";
+        } else {
+          agreeMsg.textContent = "필수 동의 사항입니다.";
+          agreeMsg.style.color = "tomato";
+        }
+      });
+
+      //   라디오
+      const radios = document.querySelectorAll("input[name = 'gender']");
+      //   console.log(radios);
+      radios.forEach(function (radio) {
+        // console.log(radios);
+        radio.addEventListener("change", function () {
+          if (radio.checked) {
+            radioResult.textContent = `선택된 성별 : ${radio.value}`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

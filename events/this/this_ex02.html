@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tihs 예제2</title>
+    <style>
+      .tomato {
+        background-color: tomato;
+        border: 2px solid transparent;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">버튼 1</button>
+    <button class="btn">버튼 2</button>
+    <button class="btn">버튼 3</button>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          // console.log(btn);
+          if (this.classList.contains("tomato")) {
+            // 이미 선택된 상태라면 => 해제
+            this.classList.remove("tomato");
+          } else {
+            // 다른 버튼들은 다 해제
+            btns.forEach((b)=>{
+              // console.log(b);
+              b.classList.remove("tomato")
+              
+            })
+            // 현재 버튼만 활성화
+            this.classList.add("tomato");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

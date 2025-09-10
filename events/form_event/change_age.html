@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미래의 나 예측하기</title>
+    <style>
+      body {
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+      }
+      #result {
+        font-size: 32px;
+        margin-top: 20px;
+        padding: 20px;
+      }
+      select {
+        padding: 8px 15px;
+        font-size: 16px;
+        border: 2px solid #666;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        /* 기본 화살표 제거 */
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        /* 화살표 대신 아이콘 넣기 */
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 0px center;
+        background-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>✨10년 후 나는?</h2>
+    <select id="age">
+      <option value="">-- 선택하세요 --</option>
+      <option value="10">10대</option>
+      <option value="20">20대</option>
+      <option value="30">30대</option>
+      <option value="40">40대</option>
+      <option value="50">50대</option>
+      <option value="60">60대 이상</option>
+    </select>
+    <div id="result">🔮나의 미래를 예측 중…</div>
+
+    <script>
+      const myAge = document.querySelector("#age");
+      myAge.addEventListener("change", function () {
+        // console.log(this.value);
+        const age = this.value; // 10, 20, 30, …
+        const result = document.getElementById("result");
+        let message = "";
+        let bgColor = "";
+        let fontSize = "18px";
+        switch (age) {
+          case "10":
+            message =
+              "👶 10년 후, 대학생이 되겠네요! 과제와 시험이 기다리고 있어요...😱";
+            bgColor = "#ffd700";
+            fontSize = "24px";
+            break;
+          case "20":
+            message =
+              "💼 10년 후, 직장인이 되어 바쁜 하루를 보내고 있을지도? ☕";
+            bgColor = "#FFA07A";
+            fontSize = "26px";
+            break;
+          case "30":
+            message = "🏡 10년 후, 집을 사야 할지 고민하는 나...💸";
+            bgColor = "#98FB98";
+            fontSize = "14px";
+            break;
+          case "40":
+            message = "🧑‍🏫 10년 후, 아이들 학비로 통장을 털리는 중...😅";
+            bgColor = "#ADD8E6";
+            fontSize = "24px";
+            break;
+          case "50":
+            message = "✈️ 10년 후, 여행을 다니며 인생을 즐기고 있을 수도? 🎉";
+            bgColor = "#DDA0DD";
+            fontSize = "34px";
+            break;
+          case "60":
+            message = "🧓 10년 후, 여유로운 은퇴 생활을 꿈꾸는 나...☕📖";
+            bgColor = "#D3D3D3";
+            fontSize = "18px";
+            break;
+          default:
+            message = "🔮나의 미래를 예측 중…";
+            bgColor = "#fff";
+            fontSize = "18px";
+            break;
+        }
+        result.textContent = message;
+        result.style.fontSize = fontSize;
+        document.body.style.backgroundColor = bgColor;
+      });
+    </script>
+  </body>
+</html>
